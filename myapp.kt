@@ -18,17 +18,41 @@ fun main(args: Array<String>) {
   // println(msg)
 
   // String, Char
-  val msg: String = "Hello World"
-  val c: Char = 'a'
+  // val msg: String = "Hello World"
+  // val c: Char = 'a'
 
   // Byte, Short, Int, Long
-  val i: Int = 100
-  val i: Long = 5555555555555L
+  // val i: Int = 100
+  // val i: Long = 5555555555555L
 
   // Float, Double
-  val d: Double = 234.523
-  val f: Float = 12.344F
+  // val d: Double = 234.523
+  // val f: Float = 12.344F
 
   // Boolean (true / false)
-  val flag: Boolean = true
+  // val flag: Boolean = true
+
+  // + - * / %
+val x = 10
+println(x / 3)    // 3
+println(x / 3.0)  // 3.333....
+println(x % 3)    // 1
+
+// ++ --
+var y = 5
+y++
+println(y)     // 6
+y--
+println(y)     // 5
+
+var z = 4
+z = z + 12
+println(z)
+z += 12
+println(z)
+
+// AND OR NOT
+// && || !
+val flag = true
+println(!flag)  // false
 }
