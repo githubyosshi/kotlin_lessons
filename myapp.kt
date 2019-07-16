@@ -64,7 +64,7 @@ fun main(args: Array<String>) {
 // //   \t:  タブ
 // println("hello\n  wor\tld")
 
-val score = 85
+// val score = 85
 // > >= < <= == !=
 // if (score > 85) {
 // println("Great!")
@@ -74,7 +74,25 @@ val score = 85
 // println("so so ...")
 // }
 
-val result = if (score > 80) "Great" else "so so ..."
-println(result)
+// val result = if (score > 80) "Great" else "so so ..."
+// println(result)
+
+// val num = 3
+// when (num) {
+//    0 -> println("Zero")
+//    1 -> println("One")
+//    2, 3  ->  println("Two or Tree")
+//    in 4..10 -> println("Many")
+//   else -> println("other")
+// }
+val num = 5
+val result = when (num) {
+  0 -> "Zero"
+  1 -> "One"
+  2, 3 -> "Two or Tree"
+  in 4..10 -> "Many"
+ else -> "other"
+}
+ println(result)
 
 }
