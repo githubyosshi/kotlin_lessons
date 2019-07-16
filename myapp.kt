@@ -102,14 +102,28 @@ fun main(args: Array<String>) {
 //   println("loop: $i")
 //   i++
 // }
-var i = 100           //  whileは実行されず、doが一度だけ実行され100が表示
-while (i < 10) {
-  println("loop: $i")
-  i++
-}
-do {
-  println("loop2: $i")
-  i++
-} while (i < 10)
+// var i = 100           //  whileは実行されず、doが一度だけ実行され100が表示
+// while (i < 10) {
+//   println("loop: $i")
+//   i++
+// }
+// do {
+//   println("loop2: $i")
+//   i++
+// } while (i < 10)
 
+// for (変数 in データの集合) 処理
+// for (i in 0..9) {
+//    println(i)
+// }
+// break  ループを抜ける
+// for (i in 0..9) {
+//   if (i == 5) break
+//   println(i)
+// }
+// continue   それ以降は実行せず、次のループへ移る
+for (i in 0..9) {
+  if (i == 5) continue     // 5は表示されない
+  println(i)
+  }
 }
