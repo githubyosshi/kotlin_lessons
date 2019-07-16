@@ -85,14 +85,31 @@ fun main(args: Array<String>) {
 //    in 4..10 -> println("Many")
 //   else -> println("other")
 // }
-val num = 5
-val result = when (num) {
-  0 -> "Zero"
-  1 -> "One"
-  2, 3 -> "Two or Tree"
-  in 4..10 -> "Many"
- else -> "other"
+// val num = 5
+// val result = when (num) {
+//   0 -> "Zero"
+//   1 -> "One"
+//   2, 3 -> "Two or Tree"
+//   in 4..10 -> "Many"
+//  else -> "other"
+// }
+//  println(result)
+
+// while
+// 0..9
+// var i = 0
+// while (i < 10) {
+//   println("loop: $i")
+//   i++
+// }
+var i = 100           //  whileは実行されず、doが一度だけ実行され100が表示
+while (i < 10) {
+  println("loop: $i")
+  i++
 }
- println(result)
+do {
+  println("loop2: $i")
+  i++
+} while (i < 10)
 
 }
