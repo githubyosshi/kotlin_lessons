@@ -56,11 +56,25 @@ fun main(args: Array<String>) {
 // val flag = true
 // println(!flag)  // false
 
-println("hello " + "world")
-val name = "taguchi"
-println("my name is $name")
-println("my score is ${12 + 32}")
-//   \n: 改行
-//   \t:  タブ
-println("hello\n  wor\tld")
+// println("hello " + "world")
+// val name = "taguchi"
+// println("my name is $name")
+// println("my score is ${12 + 32}")
+// //   \n: 改行
+// //   \t:  タブ
+// println("hello\n  wor\tld")
+
+val score = 85
+// > >= < <= == !=
+// if (score > 85) {
+// println("Great!")
+// } else if (score > 60) {
+// println("Good!")
+// } else {
+// println("so so ...")
+// }
+
+val result = if (score > 80) "Great" else "so so ..."
+println(result)
+
 }
