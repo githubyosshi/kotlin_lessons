@@ -6,10 +6,24 @@ coment
 //   println("Hello World")
 // }
 
+// 関数
+// fun sayHi() {
+//  println("hi!")
+// }
+// fun main(args: Array<String>) {
+//   sayHi()
+fun sayHi(name: String = "taguchi", age: Int = 23) {
+  println("hi! $name ($age)")
+}
+fun main(args: Array<String>) {
+  sayHi("tom, 22")     // 引数
+  sayHi("bob, 20")
+  // sayHi()              // taguchi, 23
+  sayHi(age = 19, name = "steve")
+
 // 変数
 // - val  再代入できない
 // - var  再代入できる
-fun main(args: Array<String>) {
   // val msg: String = "Hello World"
   // val msg = "Hello World" // 型推論
   // var msg = "Hello World"
@@ -99,7 +113,8 @@ fun main(args: Array<String>) {
 // 0..9
 // var i = 0
 // while (i < 10) {
-//   println("loop: $i")
+//   println("loop: $i")t 1
+
 //   i++
 // }
 // var i = 100           //  whileは実行されず、doが一度だけ実行され100が表示
@@ -122,8 +137,9 @@ fun main(args: Array<String>) {
 //   println(i)
 // }
 // continue   それ以降は実行せず、次のループへ移る
-for (i in 0..9) {
-  if (i == 5) continue     // 5は表示されない
-  println(i)
-  }
+// for (i in 0..9) {
+//   if (i == 5) continue     // 5は表示されない
+//   println(i)
+//   }
+
 }
