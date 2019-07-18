@@ -28,11 +28,31 @@ coment
 //   return "hi!"               // 値を返す
 // }
 // fun sayHi(): String = "hi!"
-fun sayHi() = "hi!"            // 自明なので型推論で省略可能
+// fun sayHi() = "hi!"            // 自明なので型推論で省略可能
 
+// fun main(args: Array<String>) {
+//   val msg = sayHi()
+//   println(msg)
+// }
+
+// Class
+// - data: property
+// - fun: method
+class User {
+  var name = "Me!"
+  fun sayHi() {
+      /*println("hi ${this.name}")*/
+      println("hi $name")
+  }
+}
 fun main(args: Array<String>) {
-  val msg = sayHi()
-  println(msg)
+   /* val user: User = User() */
+   val user = User()      //  クラスのインスタンス　型推論記法
+   println(user.name)
+   user.sayHi()
+   user.name = "Me Me!"
+   println(user.name)
+   user.sayHi()
 }
 
 // 変数
