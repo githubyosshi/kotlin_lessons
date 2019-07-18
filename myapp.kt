@@ -12,14 +12,28 @@ coment
 // }
 // fun main(args: Array<String>) {
 //   sayHi()
-fun sayHi(name: String = "taguchi", age: Int = 23) {
-  println("hi! $name ($age)")
-}
+// fun sayHi(name: String = "taguchi", age: Int = 23) {
+//   println("hi! $name ($age)")
+// }
+// fun main(args: Array<String>) {
+//   sayHi("tom, 22")     // 引数
+//   sayHi("bob, 20")
+//   // sayHi()              // taguchi, 23
+//   sayHi(age = 19, name = "steve")
+
+// fun sayHi():  Unit (     // 何もない時に型で省略可能
+// println("hi")
+// }
+// fun sayHi(): String {           // 型を指定
+//   return "hi!"               // 値を返す
+// }
+// fun sayHi(): String = "hi!"
+fun sayHi() = "hi!"            // 自明なので型推論で省略可能
+
 fun main(args: Array<String>) {
-  sayHi("tom, 22")     // 引数
-  sayHi("bob, 20")
-  // sayHi()              // taguchi, 23
-  sayHi(age = 19, name = "steve")
+  val msg = sayHi()
+  println(msg)
+}
 
 // 変数
 // - val  再代入できない
@@ -141,5 +155,3 @@ fun main(args: Array<String>) {
 //   if (i == 5) continue     // 5は表示されない
 //   println(i)
 //   }
-
-}
