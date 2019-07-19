@@ -38,21 +38,40 @@ coment
 // Class
 // - data: property
 // - fun: method
-class User {
-  var name = "Me!"
-  fun sayHi() {
-      /*println("hi ${this.name}")*/
-      println("hi $name")
+// class User {
+//   var name = "Me!"
+//   fun sayHi() {
+//       /*println("hi ${this.name}")*/
+//       println("hi $name")
+//   }
+// }
+// fun main(args: Array<String>) {
+   /* val user: User = User() */
+//    val user = User()      //  クラスのインスタンス　型推論記法
+//    println(user.name)
+//    user.sayHi()
+//    user.name = "Me Me!"
+//    println(user.name)
+//    user.sayHi()
+// }
+
+class User(var name: String) {  // コントランス引数
+   /*var name = name*/
+  var team = "red"
+  init {
+     println("instance created, name: $name, team: $team")
+  }
+ fun sayHi() {
+   println("hi $name")
   }
 }
 fun main(args: Array<String>) {
-   /* val user: User = User() */
-   val user = User()      //  クラスのインスタンス　型推論記法
-   println(user.name)
-   user.sayHi()
-   user.name = "Me Me!"
-   println(user.name)
-   user.sayHi()
+   val tom = User("tom")
+   println(tom.name)
+   tom.sayHi()
+   val bob = User("bob")
+   println(bob.name)
+   bob.sayHi()
 }
 
 // 変数
