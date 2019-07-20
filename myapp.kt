@@ -55,24 +55,51 @@ coment
 //    user.sayHi()
 // }
 
-class User(var name: String) {  // コントランス引数
+// class User(var name: String) {  // コントランス引数
    /*var name = name*/
-  var team = "red"
-  init {
-     println("instance created, name: $name, team: $team")
+//   var team = "red"
+//   init {
+//      println("instance created, name: $name, team: $team")
+//   }
+//  fun sayHi() {
+//    println("hi $name")
+//   }
+// }
+// fun main(args: Array<String>) {
+//    val tom = User("tom")
+//    println(tom.name)
+//    tom.sayHi()
+//    val bob = User("bob")
+//    println(bob.name)
+//    bob.sayHi()
+// }
+
+//  プロパティのgetter,setter
+class User(var name: String) {
+   var team = "red"
+        // getter
+        /*get() {
+           return field.toUpperCase()      // 大文字で返す
+        }*/
+        get() = field.toUpperCase()
+        // setter
+      set(value) {
+         if (value != "") {
+            field = value
+         }
+      }
+   fun sayHi() {
+       println("hi $name")
+     }
+   }
+  fun main(args: Array<String>) {
+      val tom = User("tom")
+      println(tom.team)  //  RED
+      tom.team = "blue"
+      println(tom.team)  //BLUE
+      tom.team = ""
+      println(tom.team)   //BLUE
   }
- fun sayHi() {
-   println("hi $name")
-  }
-}
-fun main(args: Array<String>) {
-   val tom = User("tom")
-   println(tom.name)
-   tom.sayHi()
-   val bob = User("bob")
-   println(bob.name)
-   bob.sayHi()
-}
 
 // 変数
 // - val  再代入できない
