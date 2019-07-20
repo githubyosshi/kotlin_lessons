@@ -75,31 +75,53 @@ coment
 // }
 
 //  プロパティのgetter,setter
-class User(var name: String) {
-   var team = "red"
+// class User(var name: String) {
+//    var team = "red"
         // getter
         /*get() {
            return field.toUpperCase()      // 大文字で返す
         }*/
-        get() = field.toUpperCase()
+        // get() = field.toUpperCase()
         // setter
-      set(value) {
-         if (value != "") {
-            field = value
-         }
-      }
-   fun sayHi() {
-       println("hi $name")
-     }
-   }
-  fun main(args: Array<String>) {
-      val tom = User("tom")
-      println(tom.team)  //  RED
-      tom.team = "blue"
-      println(tom.team)  //BLUE
-      tom.team = ""
-      println(tom.team)   //BLUE
+  //     set(value) {
+  //        if (value != "") {
+  //           field = value
+  //        }
+  //     }
+  //  fun sayHi() {
+  //      println("hi $name")
+  //    }
+  //  }
+  // fun main(args: Array<String>) {
+  //     val tom = User("tom")
+  //     println(tom.team)  //  RED
+  //     tom.team = "blue"
+  //     println(tom.team)  //BLUE
+  //     tom.team = ""
+  //     println(tom.team)   //BLUE
+  // }
+
+// 継承
+// User親クラスまたはスーパークラス -> AdminiUser子クラスまたはサブクラス
+class AdminUser(name: String): User(name) {
+  fun sayHello() {
+    println("Hello $name")
   }
+  override fun sayHi() {       //親クラスの値を上書き
+    println("hi $name")
+  }
+}
+open class User(var name: String) {
+   open fun sayHi() {            // 上書き許可
+       println("[admin] hi $name")
+   }
+}
+fun main(args: Array<String>) {
+   val bob = AdminUser("bob")
+  println(bob.name)
+  bob.sayHello()   // hello
+  bob.sayHi()        // [admin] hi bob
+}
 
 // 変数
 // - val  再代入できない
