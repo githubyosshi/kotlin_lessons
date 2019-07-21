@@ -103,26 +103,51 @@ coment
 
 // 継承
 // User親クラスまたはスーパークラス -> AdminiUser子クラスまたはサブクラス
+// class AdminUser(name: String): User(name) {
+//   fun sayHello() {
+//     println("Hello $name")
+//   }
+//   override fun sayHi() {       //親クラスの値を上書き
+//     println("hi $name")
+//   }
+// }
+// open class User(var name: String) {
+//    open fun sayHi() {            // 上書き許可
+//        println("[admin] hi $name")
+//    }
+// }
+// fun main(args: Array<String>) {
+//    val bob = AdminUser("bob")
+//   println(bob.name)
+//   bob.sayHello()   // hello
+//   bob.sayHi()        // [admin] hi bob
+// }
+
+// アクセス修飾子
+// - public どこからでも
+// - protected そのクラス＋サブクラス
+// - private そのクラス
 class AdminUser(name: String): User(name) {
-  fun sayHello() {
-    println("Hello $name")
-  }
-  override fun sayHi() {       //親クラスの値を上書き
-    println("hi $name")
+   fun sayHello() {
+      println("hello $name")  // error
+   }
+  override fun sayHi() {
+      println("[admin] hi $name")   // error
   }
 }
-open class User(var name: String) {
-   open fun sayHi() {            // 上書き許可
-       println("[admin] hi $name")
+/* open class User(public var name: String) { */
+/* open class User(protected var name: String) { */
+open class User(private var name: String) {
+    open fun sayHi() {
+        println("hi $name")
    }
 }
 fun main(args: Array<String>) {
    val bob = AdminUser("bob")
-  println(bob.name)
-  bob.sayHello()   // hello
-  bob.sayHi()        // [admin] hi bob
+   println(bob.name)     // error
+   bob.sayHello()
+   bob.sayHi()
 }
-
 // 変数
 // - val  再代入できない
 // - var  再代入できる
