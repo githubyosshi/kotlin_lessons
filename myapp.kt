@@ -150,26 +150,47 @@ coment
 // }
 
 // 拡張
-fun User.sayHello() {
-  println("hello $name")
+// fun User.sayHello() {
+//   println("hello $name")
+// }
+// fun User.sayHi() {
+//   println("[ext] hi $name")
+// }
+// val User.myName: String
+//   get() = "I am $name"
+// class User(var name: String) {
+//   fun sayHi() {
+//       println("hi $name")
+//   }
+// }
+// fun main(args: Array<String>) {
+//   val tom = User("tom")
+//    tom.sayHello()    // hello tom
+//    tom.sayHi()    // hi tom
+//    println(tom.myName)    // i am tom
+// }
+
+// 抽象クラス -> 具象クラス
+// user -> Japanese American
+abstract class User {
+    abstract fun sayHi()
 }
-fun User.sayHi() {
-  println("[ext] hi $name")
-}
-val User.myName: String
-  get() = "I am $name"
-class User(var name: String) {
-  fun sayHi() {
-      println("hi $name")
+class Japanese: User() {
+    override fun sayHi() {
+         println("こんにちは！")
   }
 }
-fun main(args: Array<String>) {
-  val tom = User("tom")
-   tom.sayHello()    // hello tom
-   tom.sayHi()    // hi tom
-   println(tom.myName)    // i am tom
+class American: User() {
+   override fun sayHi() {
+       println("Hi!")
+   }
 }
-
+fun main(args: Array<String>) {
+   val tom = American()
+   val aki = Japanese()
+   tom.sayHi()
+   aki.sayHi()
+}
 // 変数
 // - val  再代入できない
 // - var  再代入できる
