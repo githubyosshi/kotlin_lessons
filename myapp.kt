@@ -127,27 +127,49 @@ coment
 // - public どこからでも
 // - protected そのクラス＋サブクラス
 // - private そのクラス
-class AdminUser(name: String): User(name) {
-   fun sayHello() {
-      println("hello $name")  // error
-   }
-  override fun sayHi() {
-      println("[admin] hi $name")   // error
-  }
-}
+// class AdminUser(name: String): User(name) {
+//    fun sayHello() {
+//       println("hello $name")  // error
+//    }
+//   override fun sayHi() {
+//       println("[admin] hi $name")   // error
+//   }
+// }
 /* open class User(public var name: String) { */
 /* open class User(protected var name: String) { */
-open class User(private var name: String) {
-    open fun sayHi() {
-        println("hi $name")
-   }
+// open class User(private var name: String) {
+//     open fun sayHi() {
+//         println("hi $name")
+//    }
+// }
+// fun main(args: Array<String>) {
+//    val bob = AdminUser("bob")
+//    println(bob.name)     // error
+//    bob.sayHello()
+//    bob.sayHi()
+// }
+
+// 拡張
+fun User.sayHello() {
+  println("hello $name")
+}
+fun User.sayHi() {
+  println("[ext] hi $name")
+}
+val User.myName: String
+  get() = "I am $name"
+class User(var name: String) {
+  fun sayHi() {
+      println("hi $name")
+  }
 }
 fun main(args: Array<String>) {
-   val bob = AdminUser("bob")
-   println(bob.name)     // error
-   bob.sayHello()
-   bob.sayHi()
+  val tom = User("tom")
+   tom.sayHello()    // hello tom
+   tom.sayHi()    // hi tom
+   println(tom.myName)    // i am tom
 }
+
 // 変数
 // - val  再代入できない
 // - var  再代入できる
