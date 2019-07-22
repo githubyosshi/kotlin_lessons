@@ -223,20 +223,32 @@ coment
       println(x)
   }
 }*/
-class MyData<T> {
-   fun getThree(x: T) {
-       println(x)
-       println(x)
-       println(x)
-   }
-}
-fun main(args: Array<String>) {
+// class MyData<T> {
+//    fun getThree(x: T) {
+//        println(x)
+//        println(x)
+//        println(x)
+//    }
+// }
+// fun main(args: Array<String>) {
    /*val mi = MyInteger()
    mi.getThree(55)*/
-   val i = MyData<Int>()
-   i.getThree(32)
-   val s = MyData<String>()
-   s.getThree("hello")
+  //  val i = MyData<Int>()
+  //  i.getThree(32)
+  //  val s = MyData<String>()
+  //  s.getThree("hello")
+// }
+
+// data class
+data class Point(val x: Int, val y: Int)
+fun main(args: Array<String>) {
+  val p1 = Point(3, 5)
+  val p2 = p1.copy()
+  /*val p2 = Point(3, 5)*/
+  println(p1)
+  println(if (p1 == p2) "same" else "not same")
+  val (x, y) = p1
+  println("$x:$y")
 }
 
 // 変数
