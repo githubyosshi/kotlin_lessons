@@ -193,27 +193,52 @@ coment
 // }
 
 // Interface
-interface Sharable {
+// interface Sharable {
     //  抽象プロパティ
-    val version: Double
+    // val version: Double
     //  抽象メソッド
-    fun share()
+    // fun share()
     //  メソッド
-   fun getInfo() {
-       println("Share I/F ($version)")
+//    fun getInfo() {
+//        println("Share I/F ($version)")
+//   }
+// }
+// class User: Sharable {
+//   override val version = 1.1
+//   override fun share() {
+//      println("Sharing...")
+//   }
+// }
+// fun main(args: Array<String>) {
+//     val user = User()
+//     user.share()
+//     user.getInfo()
+// }
+
+// generics
+/*class MyInteger {
+  fun getThree(x: Int) {
+      println(x)
+      println(x)
+      println(x)
   }
-}
-class User: Sharable {
-  override val version = 1.1
-  override fun share() {
-     println("Sharing...")
-  }
+}*/
+class MyData<T> {
+   fun getThree(x: T) {
+       println(x)
+       println(x)
+       println(x)
+   }
 }
 fun main(args: Array<String>) {
-    val user = User()
-    user.share()
-    user.getInfo()
+   /*val mi = MyInteger()
+   mi.getThree(55)*/
+   val i = MyData<Int>()
+   i.getThree(32)
+   val s = MyData<String>()
+   s.getThree("hello")
 }
+
 // 変数
 // - val  再代入できない
 // - var  再代入できる
