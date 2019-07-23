@@ -240,15 +240,33 @@ coment
 // }
 
 // data class
-data class Point(val x: Int, val y: Int)
+// data class Point(val x: Int, val y: Int)
+// fun main(args: Array<String>) {
+//   val p1 = Point(3, 5)
+//   val p2 = p1.copy()
+//   /*val p2 = Point(3, 5)*/
+//   println(p1)
+//   println(if (p1 == p2) "same" else "not same")
+//   val (x, y) = p1
+//   println("$x:$y")
+// }
+
+// Collection
+/*
+- List (Immutable変更されない/Mutable変更可) 順番を持つデータ
+- Set (Immutable/Mutable) ランダムで重複が無い
+- Map (Immutable/Mutable) キーと値で管理
+*/
 fun main(args: Array<String>) {
-  val p1 = Point(3, 5)
-  val p2 = p1.copy()
-  /*val p2 = Point(3, 5)*/
-  println(p1)
-  println(if (p1 == p2) "same" else "not same")
-  val (x, y) = p1
-  println("$x:$y")
+    /*val sales: List<Int> = listOf(20, 30 ,40)*/      // 変数<型>
+   /*val sales = ListOf(20, 30 ,40)*/
+   val sales = mutableListOf(20, 30, 40)
+   println(sales[1])  //  0番目、１番目の30が表示
+   sales[1] = 50
+   println(sales.size)  // 3（個数）
+   for (sale in sales) {
+       println(sale)
+   }
 }
 
 // 変数
