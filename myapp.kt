@@ -257,17 +257,39 @@ coment
 - Set (Immutable/Mutable) ランダムで重複が無い
 - Map (Immutable/Mutable) キーと値で管理
 */
-fun main(args: Array<String>) {
+// fun main(args: Array<String>) {
     /*val sales: List<Int> = listOf(20, 30 ,40)*/      // 変数<型>
    /*val sales = ListOf(20, 30 ,40)*/
-   val sales = mutableListOf(20, 30, 40)
-   println(sales[1])  //  0番目、１番目の30が表示
-   sales[1] = 50
-   println(sales.size)  // 3（個数）
-   for (sale in sales) {
-       println(sale)
-   }
+//    val sales = mutableListOf(20, 30, 40)
+//    println(sales[1])  //  0番目、１番目の30が表示
+//    sales[1] = 50
+//    println(sales.size)  // 3（個数）
+//    for (sale in sales) {
+//        println(sale)
+//    }
+// }
+
+// Collection
+/*
+- List (Immutable/Mutable)
+- Set (Immutable/Mutable)
+- Map (Immutable/Mutable)
+*/
+fun main(args: Array<String>) {
+  /*val answers: Set<Int> = setOf(5, 3, 8, 5)*/
+  /*val answers = setOf(5, 3, 8, 5)*/   // 型推論
+  val answers = mutableSetOf(5, 3, 8, 5)
+  answers.add(15)
+  answers.remove(3)
+  println(answers)   // 全ての要素を確認
+  /*println(answers.contains(3))   // ３が含まれているのでtrue*/
+  /*val set1 = setOf(1, 3, 5, 8)
+  val set2 = setOf(3, 5, 8, 9) 
+  println(set1.intersect(set2))         // 積集合
+  println(set1.union(set2))              //  和集合
+  println(set1.subtract(set2))*/         // 差集合
 }
+
 
 // 変数
 // - val  再代入できない
