@@ -296,17 +296,27 @@ coment
 - Set (Immutable/Mutable)
 - Map (Immutable/Mutable)
 */
-fun main(args: Array<String>) {
+// fun main(args: Array<String>) {
    /*val users: Map<String, Int> = map0f("taguchi" to 40,"fkoji " to 80, "dot install" to 60)   */       // <キーと値の型>
   /*val users = mapOf("taguchi" to 40, "fkoji" to 80, "dot install" to 60)*/
-  val users = mutableMapOf("taguchi" to 40, "fkoji" to 80, "dotinstall" to 60)
+  // val users = mutableMapOf("taguchi" to 40, "fkoji" to 80, "dotinstall" to 60)
   /*println(users["taguchi"])    // 40*/
-  users["taguchi"] = 55
+  // users["taguchi"] = 55
   /*println(users.size)  // 要素数3
   println(users.keys)           //キーだけ取り出し
   println(users.values)*/      //値だけ取り出し
-  println(users.entries)        //全て取り出し
-}
+  // println(users.entries)        //全て取り出し
+// }
+
+fun main(args: Array<String>) {
+   val prices = listOf(53.2, 48.2, 32.8)
+   prices
+       /*.map { n -> n * 1.08 }     //  引数 → 処理*/
+       .map { it * 1.08 }                //   引数が一つの場合はit暗黙の引数が使える
+       /*.filter { n -> n > 50 } */
+       .filter { it > 50 }
+       .forEach { println(it) }        // 表示
+   }
 
 // 変数
 // - val  再代入できない
