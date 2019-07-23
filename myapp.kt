@@ -275,21 +275,38 @@ coment
 - Set (Immutable/Mutable)
 - Map (Immutable/Mutable)
 */
-fun main(args: Array<String>) {
+// fun main(args: Array<String>) {
   /*val answers: Set<Int> = setOf(5, 3, 8, 5)*/
   /*val answers = setOf(5, 3, 8, 5)*/   // 型推論
-  val answers = mutableSetOf(5, 3, 8, 5)
-  answers.add(15)
-  answers.remove(3)
-  println(answers)   // 全ての要素を確認
+  // val answers = mutableSetOf(5, 3, 8, 5)
+  // answers.add(15)
+  // answers.remove(3)
+  // println(answers)   // 全ての要素を確認
   /*println(answers.contains(3))   // ３が含まれているのでtrue*/
   /*val set1 = setOf(1, 3, 5, 8)
   val set2 = setOf(3, 5, 8, 9) 
   println(set1.intersect(set2))         // 積集合
   println(set1.union(set2))              //  和集合
   println(set1.subtract(set2))*/         // 差集合
-}
+// }
 
+// Collection
+/*
+- List (Immutable/Mutable)
+- Set (Immutable/Mutable)
+- Map (Immutable/Mutable)
+*/
+fun main(args: Array<String>) {
+   /*val users: Map<String, Int> = map0f("taguchi" to 40,"fkoji " to 80, "dot install" to 60)   */       // <キーと値の型>
+  /*val users = mapOf("taguchi" to 40, "fkoji" to 80, "dot install" to 60)*/
+  val users = mutableMapOf("taguchi" to 40, "fkoji" to 80, "dotinstall" to 60)
+  /*println(users["taguchi"])    // 40*/
+  users["taguchi"] = 55
+  /*println(users.size)  // 要素数3
+  println(users.keys)           //キーだけ取り出し
+  println(users.values)*/      //値だけ取り出し
+  println(users.entries)        //全て取り出し
+}
 
 // 変数
 // - val  再代入できない
