@@ -308,15 +308,36 @@ coment
   // println(users.entries)        //全て取り出し
 // }
 
-fun main(args: Array<String>) {
-   val prices = listOf(53.2, 48.2, 32.8)
-   prices
+// fun main(args: Array<String>) {
+//    val prices = listOf(53.2, 48.2, 32.8)
+//    prices
        /*.map { n -> n * 1.08 }     //  引数 → 処理*/
-       .map { it * 1.08 }                //   引数が一つの場合はit暗黙の引数が使える
+      //  .map { it * 1.08 }                //   引数が一つの場合はit暗黙の引数が使える
        /*.filter { n -> n > 50 } */
-       .filter { it > 50 }
-       .forEach { println(it) }        // 表示
-   }
+  //      .filter { it > 50 }
+  //      .forEach { println(it) }        // 表示
+  //  }
+
+// 例外処理
+class MyException(message: String): Throwable(message)
+fun div(a: Int, b: Int) {
+   try {
+      if (b < 0) {
+        throw MyException("not minus!")
+      }
+      println(a / b)
+  } catch (e: ArithmeticException) {
+    println(e.message)
+  } catch (e: MyException) {
+    println(e.message)
+  } finally {
+    println(" -- end -- ")
+  }
+}
+fun main(args: Array<String>) {
+   div(3, 0)
+   div(3, -3)
+}
 
 // 変数
 // - val  再代入できない
