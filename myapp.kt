@@ -319,24 +319,39 @@ coment
   //  }
 
 // 例外処理
-class MyException(message: String): Throwable(message)
-fun div(a: Int, b: Int) {
-   try {
-      if (b < 0) {
-        throw MyException("not minus!")
-      }
-      println(a / b)
-  } catch (e: ArithmeticException) {
-    println(e.message)
-  } catch (e: MyException) {
-    println(e.message)
-  } finally {
-    println(" -- end -- ")
-  }
-}
+// class MyException(message: String): Throwable(message)
+// fun div(a: Int, b: Int) {
+//    try {
+//       if (b < 0) {
+//         throw MyException("not minus!")
+//       }
+//       println(a / b)
+//   } catch (e: ArithmeticException) {
+//     println(e.message)
+//   } catch (e: MyException) {
+//     println(e.message)
+//   } finally {
+//     println(" -- end -- ")
+//   }
+// }
+// fun main(args: Array<String>) {
+//    div(3, 0)
+//    div(3, -3)
+// }
+
+// null
 fun main(args: Array<String>) {
-   div(3, 0)
-   div(3, -3)
+    /*val s: String = null*/
+    val s: String? = null    // nullable
+    /*println(s)*/
+   /*if (s !=null) {
+      println(s.length)
+   } else {
+     println(null)
+   }*/
+   /*println(s?.length)*/
+   /*println(s?.length ?: -1)*/
+   println(s!!.length)
 }
 
 // 変数
